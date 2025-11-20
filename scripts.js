@@ -40,7 +40,7 @@ amount.addEventListener("input",
   function convertCurrency(amount, price, symbol) {
     try {
       //showing exchange value
-      description.textContent = `${symbol} 1 = ${price}`
+      description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
 
       //aplying class to show footer
       footer.classList.add("show-result")
@@ -52,4 +52,12 @@ amount.addEventListener("input",
       footer.classList.remove("show-result")
       alert("não foi possível converter. Tente novamente mais tarde.")
     }
+  }
+
+//showing results on BRL
+  function formatCurrencyBRL(value){
+    return Number(value).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    })
   }
