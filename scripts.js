@@ -44,10 +44,15 @@ amount.addEventListener("input",
       description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
 
       //calculating result
-      let total = amount * price
+      let total = String(amount * price).replace(".",",")
 
-      //showing rusult
-      result.textContent = total
+      //verifying if the result is a number
+      if (isNaN(total)) {
+        return alert("Por favor, digite o valor corretamente para converter.")
+      }
+      
+        //showing rusult
+      result.textContent = `${total} Reais`
 
       //aplying class to show footer
       footer.classList.add("show-result")
