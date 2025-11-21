@@ -45,11 +45,6 @@ amount.addEventListener("input",
 
       //calculating result
       let total = String(amount * price).replace(".",",")
-
-      //verifying if the result is a number
-      if (isNaN(total)) {
-        return alert("Por favor, digite o valor corretamente para converter.")
-      }
       
         //showing rusult
       result.textContent = `${total} Reais`
